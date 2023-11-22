@@ -2,12 +2,28 @@
   "name": "classifyx",
   "version": "1.0.0",
   "description": "A powerful utility for managing CSS class names in JavaScript/TypeScript.",
-  "main": "index.js",
+  "main": "dist/classifyx.js",
+  "types": "dist/classifyx.d.ts",
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "classnames",
+    "css",
+    "utility"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/classifyx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/classifyx/issues"
+  },
+  "homepage": "https://github.com/your-username/classifyx#readme",
   "devDependencies": {
     "typescript": "^5.3.2"
   }
