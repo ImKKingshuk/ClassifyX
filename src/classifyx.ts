@@ -2,7 +2,7 @@
 // ClassifyX
 // by ImKKingshuk
 // Git-  https://github.com/ImKKingshuk/ClassifyX.git
-// Copyright © 2023 , ImKKingshuk | All Rights Reserved.
+// Copyright © 2023 , @ImKKingshuk | All Rights Reserved.
 //
 
 type ClassValue = string | number | { [key: string]: any } | ClassValue[];
