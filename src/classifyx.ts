@@ -1,4 +1,8 @@
-// classifyx.ts
+// ClassifyX
+// Copyright © 2023 , ImKKingshuk | All Rights Reserved.
+//
+//
+
 type ClassValue = string | number | { [key: string]: any } | ClassValue[];
 
 function isString(value: any): value is string {
