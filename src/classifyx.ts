@@ -1,3 +1,4 @@
+// classifyx.ts
 type ClassValue = string | number | { [key: string]: any } | ClassValue[];
 
 function isString(value: any): value is string {
@@ -12,15 +13,20 @@ function isArray(value: any): value is any[] {
   return Array.isArray(value);
 }
 
-function getPrefixedClassNames(prefix: string, classNames: string[]): string[] {
-  return classNames.map((className) => `${prefix}-${className}`);
+function getPrefixedClassNames(
+  prefix: string,
+  classNames: string | string[]
+): string[] {
+  const classes = isArray(classNames) ? classNames : [classNames];
+  return classes.map((className) => `${prefix}-${className}`);
 }
 
 function getCssModuleClassNames(
   module: Record<string, string>,
-  classNames: string[]
+  classNames: string | string[]
 ): string[] {
-  return classNames.map((className) => module[className] || className);
+  const classes = isArray(classNames) ? classNames : [classNames];
+  return classes.map((className) => module[className] || className);
 }
 
 function getClassNames(...args: ClassValue[]): string {
