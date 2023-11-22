@@ -1,7 +1,7 @@
 {
   "name": "classifyx",
   "version": "1.0.0",
-  "description": "",
+  "description": "A powerful utility for managing CSS class names in JavaScript/TypeScript.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
