@@ -1,6 +1,6 @@
 <h1 align="center">ClassifyX</h1>
 
-<p align="center">🎨 ClassifyX: Your Ultimate CSS Class Manager! Simplify styling in JavaScript/TypeScript with dynamic class generation, conditional styling, and more. Seamlessly integrate with Tailwind CSS, support TypeScript, and enjoy automatic camelCase conversion. The go-to utility for cleaner and efficient styling workflows! 💻 🚀 #CSS #JavaScript #TypeScript #TailwindCSS
+<p align="center">🎨 ClassifyX: Your Ultimate CSS Class Manager! Simplify styling in JavaScript/TypeScript with dynamic class generation, conditional styling, and more. Seamlessly integrate with CSS Frameworks, support TypeScript, and enjoy automatic camelCase conversion. The go-to utility for cleaner and efficient styling workflows! 💻 🚀 #CSS #JavaScript #TypeScript #TailwindCSS
 </p>
 
 <br><br>
