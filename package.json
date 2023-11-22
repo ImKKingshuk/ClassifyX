@@ -18,12 +18,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/classifyx.git"
+    "url": "https://github.com/ImKKingshuk/ClassifyX.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/classifyx/issues"
+    "url": "https://github.com/ImKKingshuk/ClassifyX/issues"
   },
-  "homepage": "https://github.com/your-username/classifyx#readme",
+  "homepage": "https://github.com/ImKKingshuk/ClassifyX#readme",
   "devDependencies": {
     "typescript": "^5.3.2"
   }
