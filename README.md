@@ -42,3 +42,5 @@ pnpm
 ```bash
 pnpm install classifyx
 ```
+
+## Usage
