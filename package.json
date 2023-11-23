@@ -1,7 +1,7 @@
 {
   "name": "classifyx",
   "version": "1.0.0",
-  "description": "A powerful utility for managing CSS class names in JavaScript/TypeScript.",
+  "description": "🎨 ClassifyX 🎨 : Your Ultimate CSS Class Manager! Simplify styling in JavaScript/TypeScript with dynamic class generation, conditional styling, and more. Seamlessly integrate with CSS Frameworks, support TypeScript, and enjoy automatic camelCase conversion. The go-to utility for cleaner and efficient styling workflows!",
   "main": "dist/classifyx.js",
   "types": "dist/classifyx.d.ts",
   "scripts": {
@@ -10,9 +10,26 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "classnames",
+    "css class manager",
     "css",
-    "utility"
+    "utility",
+    "javascript",
+    "sass",
+    "typescript",
+    "css-animations",
+    "css-modules",
+    "npm-package",
+    "css-framework",
+    "css-in-js",
+    "npm-module",
+    "classnames",
+    "webdevelopment",
+    "css-in-ts",
+    "typescript-utility",
+    "classname-to-css",
+    "classname-variants",
+    "css-class-manager",
+    "dynamic-class-generation"
   ],
   "author": "Kingshuk Mondal",
   "license": "GPL-3.0-or-later",
