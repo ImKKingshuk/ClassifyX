@@ -18,12 +18,6 @@ type ClassifyXContextType = {
   unique: (...args: ClassValue[]) => string;
   prefix: (prefix: string, ...args: ClassValue[]) => string;
   cssModule: (module: Record<string, string>, ...args: ClassValue[]) => string;
-  spacing: (size: number) => string;
-  flex: (direction: string, align: string, justify: string) => string;
-  flexItem: (flex: number) => string;
-  fontSize: (size: number) => string;
-  util: (utility: string) => string;
-  textAlign: (align: string) => string;
 };
 
 const ClassifyXContext = createContext<ClassifyXContextType | undefined>(
@@ -48,12 +42,6 @@ export const ClassifyXProvider: React.FC<ClassifyXProviderProps> = ({
         unique: ClassifyX.unique,
         prefix: ClassifyX.prefix,
         cssModule: ClassifyX.cssModule,
-        spacing: ClassifyX.spacing,
-        flex: ClassifyX.flex,
-        flexItem: ClassifyX.flexItem,
-        fontSize: ClassifyX.fontSize,
-        util: ClassifyX.util,
-        textAlign: ClassifyX.textAlign,
       }}
     >
       {children}
