@@ -11,6 +11,7 @@ export type ClassValue =
   | number
   | { [key: string]: any }
   | ClassValue[];
+export type ConditionalFunction = () => string | undefined;
 
 function isString(value: any): value is string {
   return typeof value === "string" || value instanceof String;
@@ -40,6 +41,10 @@ function getCssModuleClassNames(
   return classes.map((className) => module[className] || className);
 }
 
+function dedupeClasses(classNames: string[]): string[] {
+  return [...new Set(classNames)];
+}
+
 function getClassNames(...args: ClassValue[]): string {
   const classes: string[] = [];
 
@@ -54,10 +59,18 @@ function getClassNames(...args: ClassValue[]): string {
           classes.push(key);
         }
       });
+    } else if (typeof arg === "function") {
+      // Support for conditional expressions and if-else statements
+      const result = (arg as ConditionalFunction)();
+      if (result) {
+        classes.push(result);
+      }
+    } else {
+      classes.push(arg);
     }
   });
 
-  return classes.join(" ");
+  return dedupeClasses(classes).join(" ");
 }
 
 function ClassifyX(...args: ClassValue[]): string {
@@ -113,6 +126,36 @@ ClassifyX.cssModule = function (
   const moduleClasses = getCssModuleClassNames(module, classes);
 
   return moduleClasses.join(" ");
+};
+
+// New Features
+
+ClassifyX.spacing = function (size: number): string {
+  return `${size * 4}px`;
+};
+
+ClassifyX.flex = function (
+  direction: string,
+  align: string,
+  justify: string
+): string {
+  return `display: flex; flex-direction: ${direction}; align-items: ${align}; justify-content: ${justify};`;
+};
+
+ClassifyX.flexItem = function (flex: number): string {
+  return `flex: ${flex};`;
+};
+
+ClassifyX.fontSize = function (size: number): string {
+  return `${size}px`;
+};
+
+ClassifyX.util = function (utility: string): string {
+  return `util-${utility}`;
+};
+
+ClassifyX.textAlign = function (align: string): string {
+  return `text-align: ${align};`;
 };
 
 export default ClassifyX;
