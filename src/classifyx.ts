@@ -60,7 +60,6 @@ function getClassNames(...args: ClassValue[]): string {
         }
       });
     } else if (typeof arg === "function") {
-      // Support for conditional expressions and if-else statements
       const result = (arg as ConditionalFunction)();
       if (result) {
         classes.push(result);
@@ -128,7 +127,7 @@ ClassifyX.cssModule = function (
   return moduleClasses.join(" ");
 };
 
-// New Features
+// New Features v1.0.4
 
 ClassifyX.spacing = function (size: number): string {
   return `${size * 4}px`;
