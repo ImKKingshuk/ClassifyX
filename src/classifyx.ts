@@ -111,4 +111,4 @@ ClassifyX.cssModule = function (
   return moduleClasses.join(" ");
 };
 
-module.exports = ClassifyX;
+export default ClassifyX;
