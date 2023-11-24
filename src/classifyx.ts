@@ -127,34 +127,4 @@ ClassifyX.cssModule = function (
   return moduleClasses.join(" ");
 };
 
-// New Features v1.0.4
-
-ClassifyX.spacing = function (size: number): string {
-  return `${size * 4}px`;
-};
-
-ClassifyX.flex = function (
-  direction: string,
-  align: string,
-  justify: string
-): string {
-  return `display: flex; flex-direction: ${direction}; align-items: ${align}; justify-content: ${justify};`;
-};
-
-ClassifyX.flexItem = function (flex: number): string {
-  return `flex: ${flex};`;
-};
-
-ClassifyX.fontSize = function (size: number): string {
-  return `${size}px`;
-};
-
-ClassifyX.util = function (utility: string): string {
-  return `util-${utility}`;
-};
-
-ClassifyX.textAlign = function (align: string): string {
-  return `text-align: ${align};`;
-};
-
 export default ClassifyX;
