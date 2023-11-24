@@ -5,7 +5,7 @@
 // Copyright © 2023 , @ImKKingshuk | All Rights Reserved.
 // GNU General Public License v3.0 or later
 //
-// src/ClassifyXProvider.tsx
+
 import React, { createContext, ReactNode } from "react";
 import ClassifyX, { ClassValue } from "./ClassifyX";
 
