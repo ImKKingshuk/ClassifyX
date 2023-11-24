@@ -6,7 +6,11 @@
 // GNU General Public License v3.0 or later
 //
 
-type ClassValue = string | number | { [key: string]: any } | ClassValue[];
+export type ClassValue =
+  | string
+  | number
+  | { [key: string]: any }
+  | ClassValue[];
 
 function isString(value: any): value is string {
   return typeof value === "string" || value instanceof String;
