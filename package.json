@@ -1,6 +1,6 @@
 {
   "name": "classifyx",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "🎨 ClassifyX 🎨 : Your Ultimate CSS Class Manager! Simplify styling in JavaScript/TypeScript with dynamic class generation, conditional styling, and more. Seamlessly integrate with CSS Frameworks, support TypeScript, and enjoy automatic camelCase conversion. The go-to utility for cleaner and efficient styling workflows!",
   "main": "dist/classifyx.js",
   "types": "dist/classifyx.d.ts",
