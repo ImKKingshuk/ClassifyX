@@ -132,9 +132,9 @@ export default MyComponent;
 
 ### Super Complex scenarios :
 
-```jsx
-// Example: Conditional Styling based on External Data
+Example 1 :
 
+```jsx
 // Suppose you have a dynamic application with various data sources, and you want to apply conditional styling to a component based on external data. The styling rules are complex and depend on multiple factors. ClassifyX can help manage the dynamic class names.
 
 import React from "react";
@@ -164,4 +164,93 @@ const ComplexStylingComponent = ({ data }) => {
 };
 
 export default ComplexStylingComponent;
+```
+
+Example 2:
+
+```jsx
+// Imagine you are building a sophisticated dashboard for a dynamic analytics application. This dashboard comprises various widgets, each serving a unique purpose, such as charts, maps, and other data representations. The widgets are loaded dynamically from external sources, and the application needs to handle a multitude of complex styling scenarios.
+
+// The dashboard has a highly interactive user interface, allowing users to toggle between different widgets, and even switch between a light and dark theme. Each widget has its own set of complex styling conditions based on its type, the amount of data it represents, and whether it's currently selected by the user.
+
+// ClassifyX is employed to manage this complexity by dynamically applying class names to the widgets and the overall dashboard. For instance, it handles the dynamic switch between light and dark themes, highlights selected widgets, categorizes widgets based on their types (e.g., charts, maps), and even identifies widgets with a substantial amount of data for special styling.
+
+// This example showcases the power of ClassifyX in addressing an ultra-complex scenario where the styling rules are intricate, dynamic, and contingent on multiple factors. It provides a clean and efficient way to handle the diverse styling needs of a modern, data-driven dashboard.
+
+import React, { useState, useEffect } from "react";
+import ClassifyX from "classifyx";
+
+const UltraComplexDashboard = () => {
+  const [widgets, setWidgets] = useState([]);
+  const [selectedWidget, setSelectedWidget] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Simulate fetching dynamic widget data
+    const fetchWidgets = async () => {
+      const result = await fetch("https://api.example.com/widgets");
+      const widgetData = await result.json();
+      setWidgets(widgetData);
+    };
+
+    fetchWidgets();
+  }, []);
+
+  const handleWidgetClick = (widget) => {
+    setSelectedWidget(widget);
+  };
+
+  const handleToggleDarkMode = () => {
+    setDarkMode((prevDarkMode) => !prevDarkMode);
+  };
+
+  return (
+    <div className={ClassifyX("dashboard", darkMode && "dark-mode")}>
+      <div className="sidebar">
+        <button
+          className={ClassifyX("toggle-button", darkMode && "dark-mode-toggle")}
+          onClick={handleToggleDarkMode}
+        >
+          Toggle Dark Mode
+        </button>
+        <ul>
+          {widgets.map((widget) => (
+            <li
+              key={widget.id}
+              className={ClassifyX(
+                "widget",
+                widget === selectedWidget && "selected-widget",
+                widget.type === "chart" && "chart-widget",
+                widget.type === "map" && "map-widget",
+                widget.data.length > 100 && "large-data-widget"
+                // ... other complex conditions based on widget properties
+              )}
+              onClick={() => handleWidgetClick(widget)}
+            >
+              {widget.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="main-content">
+        {selectedWidget && (
+          <div className="widget-details">
+            <h2>{selectedWidget.name}</h2>
+            <p>{selectedWidget.description}</p>
+            {/* Render widget details based on type */}
+            {selectedWidget.type === "chart" && (
+              <div className="chart-container">Chart goes here</div>
+            )}
+            {selectedWidget.type === "map" && (
+              <div className="map-container">Map goes here</div>
+            )}
+            {/* ... other widget types */}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default UltraComplexDashboard;
 ```
