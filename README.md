@@ -17,6 +17,7 @@
 - **Toggle Classes**: Conditionally toggle classes based on boolean conditions.
 - **Server-Side Rendering (SSR) Support**: Designed to work well with server-side rendering environments.
 - **Nested Arrays and Objects Support**: Handle nested arrays and objects to build complex class name structures.
+- **Inline Boolean Expressions**: Easily include class names based on inline boolean expressions.
 
 ## Installation
 
