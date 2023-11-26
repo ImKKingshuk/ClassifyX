@@ -1,4 +1,3 @@
-//
 // ClassifyX
 // by ImKKingshuk
 // Git-  https://github.com/ImKKingshuk/ClassifyX.git
@@ -72,6 +71,10 @@ function getClassNames(...args: ClassValue[]): string {
   return dedupeClasses(classes).join(" ");
 }
 
+function conditionalClass(condition: boolean, className: string): string {
+  return condition ? className : "";
+}
+
 function ClassifyX(...args: ClassValue[]): string {
   const classes = getClassNames(...args);
 
@@ -126,5 +129,7 @@ ClassifyX.cssModule = function (
 
   return moduleClasses.join(" ");
 };
+
+ClassifyX.conditionalClass = conditionalClass;
 
 export default ClassifyX;
