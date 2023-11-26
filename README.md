@@ -129,3 +129,39 @@ const MyComponent = ({ isActive, isPrimary, isLarge, isDisabled, variant }) => {
 
 export default MyComponent;
 ```
+
+### Super Complex scenarios :
+
+```jsx
+// Example: Conditional Styling based on External Data
+
+// Suppose you have a dynamic application with various data sources, and you want to apply conditional styling to a component based on external data. The styling rules are complex and depend on multiple factors. ClassifyX can help manage the dynamic class names.
+
+import React from "react";
+import ClassifyX from "classifyx";
+
+const ComplexStylingComponent = ({ data }) => {
+  const shouldHighlight = data.some((item) => item.priority === "high");
+  const shouldShowDetails = data.length > 5;
+
+  return (
+    <div
+      className={ClassifyX(
+        "complex-component",
+        shouldHighlight && "highlight",
+        shouldShowDetails && "show-details"
+        // ... other complex conditions
+      )}
+    >
+      <h2>Title</h2>
+      <ul>
+        {data.map((item, index) => (
+          <li key={index}>{item.label}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ComplexStylingComponent;
+```
