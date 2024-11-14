@@ -1,4 +1,4 @@
-<h1 align="center">🎨 ClassifyX 🎨</h1>
+<h1 align="center">ClassifyX</h1>
 
 <p align="center">
 ClassifyX: Your Ultimate Style Utility! Effortlessly generate dynamic classes, create and manage variants, merge classes, and apply conditional styles. With full TypeScript support and seamless integration with Tailwind CSS and other frameworks, streamline your styling workflow! 💻 🚀
