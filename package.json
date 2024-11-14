@@ -22,6 +22,38 @@
     "lint": "eslint .",
     "test": "vitest run"
   },
+  "author": "Kingshuk Mondal",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImKKingshuk/ClassifyX.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ImKKingshuk/ClassifyX/issues"
+  },
+  "homepage": "https://github.com/ImKKingshuk/ClassifyX#readme",
+  "keywords": [
+    "css class manager",
+    "css",
+    "utility",
+    "javascript",
+    "sass",
+    "typescript",
+    "css-animations",
+    "css-modules",
+    "npm-package",
+    "css-framework",
+    "css-in-js",
+    "npm-module",
+    "classnames",
+    "webdevelopment",
+    "css-in-ts",
+    "typescript-utility",
+    "classname-to-css",
+    "classname-variants",
+    "css-class-manager",
+    "dynamic-class-generation"
+  ],
   "devDependencies": {
     "@eslint/js": "^9.12.0",
     "@rslib/core": "^0.0.18",
