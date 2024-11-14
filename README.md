@@ -29,25 +29,26 @@ ClassifyX: Your Ultimate Style Utility! Effortlessly generate dynamic classes, c
 ## Installation
 
 Install `ClassifyX` using your preferred package manager:
-bun
+
+### bun
 
 ```bash
 bun add classifyx
 ```
 
-npm
+### npm
 
 ```bash
 npm install classifyx
 ```
 
-pnpm
+### pnpm
 
 ```bash
 pnpm add classifyx
 ```
 
-yarn
+### yarn
 
 ```bash
 yarn add classifyx
