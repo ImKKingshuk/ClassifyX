@@ -1,19 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { tv, type VariantProps } from 'tailwind-variants';
+import { cva } from 'class-variance-authority';
 
 export function cfx(
   baseStyles: string | ClassValue,
   variantsConfigOrClassName?: Record<string, any> | ClassValue | null,
-  variantProps?: VariantProps<any>,
+  variantProps?: Record<string, any>,
   ...additionalClasses: ClassValue[]
 ) {
   const baseClassString = clsx(baseStyles);
 
-  let variantClass = '';
-
+  // Handle case when second argument is just classes, not variants config
   if (
     typeof variantsConfigOrClassName === 'string' ||
     Array.isArray(variantsConfigOrClassName)
@@ -21,16 +19,18 @@ export function cfx(
     return twMerge(
       clsx(baseClassString, variantsConfigOrClassName, ...additionalClasses),
     );
-  } else if (
+  }
+  // Handle case with variant configuration
+  else if (
     typeof variantsConfigOrClassName === 'object' &&
     variantsConfigOrClassName !== null
   ) {
-    const variantFn = tv({
-      base: baseClassString,
+    const variantFn = cva(baseClassString, {
       variants: variantsConfigOrClassName.variants,
       defaultVariants: variantsConfigOrClassName.defaultVariants,
     });
 
+    let variantClass = '';
     if (variantProps) {
       variantClass = variantFn(variantProps);
     }
@@ -38,5 +38,6 @@ export function cfx(
     return twMerge(clsx(baseClassString, variantClass, ...additionalClasses));
   }
 
+  // Default case - just base styles and additional classes
   return twMerge(clsx(baseClassString, ...additionalClasses));
 }
